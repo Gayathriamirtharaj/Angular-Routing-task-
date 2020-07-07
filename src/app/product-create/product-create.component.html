@@ -1,0 +1,17 @@
+<form [formGroup]="prodForm" (submit)="submitForm()">
+  <label for="Productame"> Product-name</label>
+  <input type="text" name="Productame" formControlName="Productname" />
+  <span *ngIf="!prodForm.get('Productname').valid" >Enter a proper name</span>
+  <br>
+  <label for="Product-price" >Product-price</label>
+  <input type="text" name="Product-name" formControlName="Product-price" />
+  <span *ngIf="!prodForm.get('Product-price').valid">Enter the product price</span>
+  <br>
+  <label for="product-stock-availability">Stock availability</label>
+  <input type="text" name="product-stock-availability" formControlName="product-stock-availability" />
+  <span *ngIf="!prodForm.get('Product-stock-availability').valid">Please provide stock availability</span>
+  <br>
+  {{prodForm.valid}}
+
+  <input type="submit" value="Submit" />
+  </form>
